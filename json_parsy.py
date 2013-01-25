@@ -43,7 +43,8 @@ def clean_json(doc_text):
 def add_head(html):
   prepend = "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /><title>" + html["title"] + "</title></head><body>"
   h1 = "<h1>" + html["title"] + "</h1>"
-  return prepend + h1 + html["fulltext"] + "</body></html>"
+  body = html["fulltext"] or html["introtext"]
+  return prepend + h1 + body  + "</body></html>"
 
 if __name__ == "__main__":
 	main()
