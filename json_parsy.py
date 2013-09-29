@@ -28,6 +28,7 @@ def main():
     if not os.path.exists(dir):
 	    os.makedirs(dir)
     structured_html = add_head(data)
+    structured_html = remove_inline_styling(structured_html)
     html_file = open(file_path , 'w')
     html_file.write(structured_html.encode("utf-8"))
     html_file.close()
@@ -45,6 +46,10 @@ def add_head(html):
   h1 = "<h1>" + html["title"] + "</h1>"
   body = html["fulltext"] or html["introtext"]
   return prepend + h1 + body  + "</body></html>"
+
+def remove_inline_styling(html):
+  return html.replace("\<style.*?>")
+
 
 if __name__ == "__main__":
 	main()
