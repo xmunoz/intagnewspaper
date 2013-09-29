@@ -9,7 +9,7 @@ import sys
 import json
 import os.path
 import datetime
-import time
+import time, re
 
 def main():
   #read in data
@@ -28,7 +28,7 @@ def main():
     if not os.path.exists(dir):
 	    os.makedirs(dir)
     structured_html = add_head(data)
-    structured_html = remove_inline_styling(structured_html)
+    structured_html = remove_styling_and_empty_elements(structured_html)
     html_file = open(file_path , 'w')
     html_file.write(structured_html.encode("utf-8"))
     html_file.close()
@@ -47,8 +47,10 @@ def add_head(html):
   body = html["fulltext"] or html["introtext"]
   return prepend + h1 + body  + "</body></html>"
 
-def remove_inline_styling(html):
-  return html.replace("\<style.*?>")
+def remove_styling_and_empty_elements(html):
+  html_no_inline_styling = re.sub(" style=\".*?\"", "", html)
+  html_correct_img_paths = html_no_inline_styling.replace("http://intagnewspaper.org/images/", "../../../")
+  return html_correct_img_paths
 
 
 if __name__ == "__main__":
