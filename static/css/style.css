@@ -1,0 +1,261 @@
+body.intag {
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+.bread {
+    font-size: 24px;
+    display: none;
+}
+
+.breadcrumbs {
+    font-size: 24px;
+}
+
+img {
+    float: right;
+}
+
+h1 {
+    font-size: 68px;
+}
+
+.content p {
+    display: inline;
+    line-height: 1.5em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.header-title {
+    display: inline-block;
+    border-bottom: 1px solid rgba(136, 204, 136, 0.7);
+    padding: 4px 30px;
+    margin: 10px 0 4px 0;
+    font-size: 44px;
+    font-weight: 100;
+}
+
+.bracket {
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    clear: both;
+    border-top: 1px solid #000;    
+    border-bottom: 1px solid #000;    
+    margin: 14px 0;
+}
+
+.bracket:hover {
+    color: #FFF;
+    background-color: #000;
+}
+
+.clearfix {
+    width: 100%;
+    clear: both;
+}
+
+.article-title {
+    width: 60%;
+    font-size: 52px;
+    display: inline-block;
+    float: none;
+    clear: none;
+    text-align: left;
+    line-height: 60px;
+    padding-bottom: 18px;
+    margin: 40px 0 8px 0;
+    font-weight: 100;
+}
+
+.nav-circle {
+    position: fixed;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 26px;
+    text-align: center;
+    padding-left: 50px;
+    padding-top: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 999px;
+    background-color: rgba(0,0,0,0.3);
+    color: #FFF;
+    line-height: 200px;
+    cursor: pointer;
+}
+
+.nav-circle.archivo {
+    margin: -120px 0 0 -80px;
+}
+
+.nav-circle.fecha {
+    right: -50px;
+    margin-top: -120px;
+    padding-left: 0;
+    padding-right: 50px;
+}
+
+.nav-circle:hover {
+    background-color: #494;
+    opacity: 0.9
+}
+
+.description {
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-size: 13px;
+    color: #000;
+}
+
+.nav {
+    width: 96%;
+    border-top: 1px solid rgba(136, 204, 136, 0.7);
+    padding-top: 4px;
+    position: absolute;
+    margin: 100px 2% 0 2%;
+}
+
+.menu-tab {
+    position: absolute;
+    right: 80px;
+}
+
+.menu-tab.top {
+    right: 0;
+}
+
+.branch {
+    display: inline-block;
+    border-bottom: 1px solid rgba(136, 204, 136, 0.7);
+    float: right;
+    margin-left: 1px;
+    margin-top: -4px;
+    padding: 4px 18px 4px 14px;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    margin-right: 28px;
+    cursor: pointer;
+    line-height: 21px;
+
+    transition: all 300ms;
+}
+
+.twig {
+    margin-top: -4px;
+    margin-right: -1px;
+    display: inline-block;
+    border-top: 30px solid rgba(136, 204, 136, 0.7);
+    border-left: 50px solid transparent;
+    float: right;
+
+    transition: all 300ms;
+}
+
+.twig-cover {
+    margin-top: -4px;
+    margin-right: -52px;
+    display: inline-block;
+    float: right;
+    border-top: 30px solid #FFF;
+    border-left: 50px solid transparent;
+
+    transition: all 300ms;
+
+}
+
+
+.twig-cover.top {
+    margin-top: -35px;
+    margin-right: -4px;
+    border-bottom: 30px solid #FFF;
+    border-left: 50px solid transparent;
+    border-top: none;
+}
+
+.branch.top {
+    margin-top: -35px;
+    margin-bottom: 30px;
+    line-height: 21px;
+    border-top: 1px solid rgba(136, 204, 136, 0.7);
+    border-bottom: none;
+}
+
+.twig.top {
+    border-bottom: 30px solid rgba(136, 204, 136, 0.7);
+    border-left: 50px solid transparent;
+    border-top: none;
+    margin-top: -35px;
+    margin-right: -2px;
+}
+
+.nav.rounded {
+    border-color: #8C8;
+}
+
+.rounded .branch {
+    display: inline-block;
+    border-bottom: 1px solid #8C8;
+    float: right;
+    margin-left: -5px;
+    padding: 4px 18px 4px 14px;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    background-color: #8C8;
+    margin-right: 28px;
+    line-height: 26px;
+    margin-top: -4px;
+    color: white;
+    border-bottom-right-radius: 38px;
+    border-bottom-left-radius: 22px;
+}
+
+.rounded .branch.top {
+    display: inline-block;
+    float: right;
+    margin-left: -10px;
+    padding: 6px 18px 2px 14px;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    background-color: #8C8;
+    margin-right: 28px;
+    line-height: 22px;
+    margin-top: -37px;
+    color: white;
+    border-radius: 0;
+    border-top-right-radius: 38px;
+    border-top-left-radius: 24px;
+}
+
+.rounded .twig-cover.top {
+    margin-top: -35px;
+    margin-right: -1px;
+    border-bottom: 30px solid #8C8;
+    border-left: 50px solid transparent;
+    border-top: none;
+}
+
+.rounded .twig-cover {
+    border-top-color: #8C8;
+}
+
+.content {
+    width: 94%;
+    margin: 0 auto;
+
+}
