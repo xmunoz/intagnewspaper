@@ -12,3 +12,5 @@
     -- Titulo Uno
     - Feb
     -- Titulo Does
+- individual article pages
+    - breadcrumbs

@@ -56,22 +56,6 @@ h1 {
     border-bottom-color: #B80;
 }
 
-.bracket {
-    display: inline-block;
-    padding: 4px 8px;
-    cursor: pointer;
-    font-size: 14px;
-    clear: both;
-    border-top: 1px solid #000;    
-    border-bottom: 1px solid #000;    
-    margin: 14px 0;
-}
-
-.bracket:hover {
-    color: #FFF;
-    background-color: #000;
-}
-
 .clearfix {
     width: 100%;
     clear: both;
@@ -137,14 +121,13 @@ h1 {
     letter-spacing: 1px;
     position: relative;
     margin-right: 28px;
-    cursor: pointer;
     line-height: 13px;
-    color: #666;
-}
-
-.branch:hover {
     color: #000;
 }
+
+/*.branch:hover {
+    color: #000;
+}*/
 
 .twig {
     margin-top: -4px;
@@ -205,4 +188,9 @@ h1 {
 .content img {
     float: right;
     margin: 0 0 3px 8px;
+}
+
+.dot {
+    display: inline;
+    color: #8C8;
 }
