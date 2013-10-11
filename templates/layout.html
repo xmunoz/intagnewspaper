@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Adiós</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/reset.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body id="intag" class="intag">
+
+    <div class="header">
+        <div class="tiny">Periodico</div>
+        <a class="header-title mono" href="">
+            <div>Intag</div>
+        </a>
+        <div class="clearfix"></div>
+        <div class="description">El Primer Periodico Independiente</div>
+        <div class="description">del Rincon Mas Bello y Mas Verde del Ecuador</div>
+        <div class="nav">
+            <p class="nav-tab separator">|</p>
+            <a class="nav-tab" href="">Articulos</a>
+            <p class="nav-tab separator">|</p>
+            <a class="nav-tab" href="">Archivo de PDFs</a>
+            <p class="nav-tab separator">|</p>
+        </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+</body>
