@@ -95,14 +95,14 @@ h1 {
 
 .article-title {
     width: 60%;
-    font-size: 52px;
+    font-size: 30px;
     display: inline-block;
     float: none;
     clear: none;
     text-align: left;
-    line-height: 60px;
+    line-height: 40px;
     padding-bottom: 18px;
-    margin: 40px 0 8px 0;
+    margin: 40px 0 28px 0;
     font-weight: 100;
 }
 
@@ -123,17 +123,8 @@ h1 {
     border-top: 1px solid #8B0;
     padding-top: 4px;
     position: absolute;
-    margin: 148px 2% 0 2%;
+    margin: 128px 2% 0 2%;
 }
-
-/*.selection {
-    position: relative;
-    display: inline-block;
-    z-index: -1;
-    margin-top: 4px;
-    float: left;
-    clear: left;
-}*/
 
 .menu-tab {
     position: absolute;
@@ -249,7 +240,7 @@ h1 {
     width: 20%;
     display: inline-block;
     float: right;
-    margin-top: 38px;
+    margin-top: 44px;
     margin-right: -8px;
 }
 
@@ -264,10 +255,17 @@ h1 {
     line-height: 24px;
     border-top: 1px solid #8B0;
     width: 100%;
-    padding: 3px 3px 3px 0;
+    padding-right: 3px;
 }
 
-.link:hover a {
+.link a {
+    text-decoration: none;
+    padding: 3px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.link a:hover {
     color: #B80;
 }
 
@@ -284,7 +282,7 @@ h1 {
 }
 
 .content-title {
-    font-size: 52px;
+    font-size: 30px;
     display: block;
     text-align: left;
     line-height: 60px;
@@ -297,7 +295,7 @@ h1 {
 .content .thumbnail {
     max-width: 25%;
     max-height: 170px;
-    margin: 0 12px 4px 0;
+    margin: 0 12px 0 0;
     float: left;
     border: 1px solid #8B0;
 }
@@ -321,7 +319,7 @@ h1 {
     width: 97%;
     float: left;
     border-bottom: 1px solid #8b0;
-    padding: 18px 0 10px 14px;
+    padding: 18px 0 16px 14px;
 }
 
 .issue-number {
@@ -349,8 +347,6 @@ h1 {
     .content .archive-block {
         width: 47%;
         border-right: 1px solid #8b0;
-        padding-top: 18px;
-        padding-left: 14px;
     }
 
     .content .archive-block:nth-of-type(odd) {

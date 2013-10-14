@@ -1,27 +1,54 @@
-{% extends "layout.html" %}
-{% block body %}
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Adiós</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <script type="text/javascript" src="static/js/main.js">
+    </script>
+</head>
+
+<body id="intag" class="intag">
+
+    <div class="header">
+        <div class="tiny">Periodico</div>
+        <a class="header-title mono" href="">
+            <div>Intag</div>
+        </a>
+        <div class="clearfix"></div>
+        <div class="description">El Primer Periodico Independiente</div>
+        <div class="description">del Rincon Mas Bello y Mas Verde del Ecuador</div>
+        <div class="nav">
+            <a class="nav-tab" href="">Articulos</a>
+            <p class="nav-tab separator">|</p>
+            <a class="nav-tab" href="">Archivo de PDFs</a>
+        </div>
+    </div>
+
     <div class="content">
-        <ul class="blog-roll">
-            <li class="link link-title">Blogs</li>
-            <li class="link"> 
+        <div class="blog-roll">
+            <div class="link link-title">Blogs</div>
+            <div class="link"> 
                 <a href="http://www.casapalabrapueblo.blogspot.com">Casa Palabra y Pueblo</a>
-            </li>
-            <li class="link">
+            </div>
+            <div class="link">
                 <a href="http://www.radiointag.com">Radio Intag</a>
-            </li>
-            <li class="link">
+            </div>
+            <div class="link">
                 <a href="http://www.reservaloscedros.org">Los Cedros Reserve</a>
-            </li>
-            <li class="link">
+            </div>
+            <div class="link">
                 <a href="http://www.intagcloudforest.com">Intag Cloud Forest Reserve</a>
-            </li>
-            <li class="link">
+            </div>
+            <div class="link">
                 <a href="http://www.elrefugiocloudforest.com">El Refugio Cloud Forest Reserve</a>
-            </li>
-            <li class="link">
-                <a href="http://www.betterplace.org/en/projects/3410-casa-palabra-y-pueblo-support-education-in-intag">Hacer Donación</a>
-            </li>
-        </ul>
+            </div>
+            <div class="link">
+                <a href="http://www.betterplace.org/en/projects/3410-casa-palabra-y-pueblo-support-education-in-intag">Dona Ya</a>
+            </div>
+        </div>
         <div class="text-block">
             <div class="content-title">Introducción</div>
             <p>
@@ -49,4 +76,5 @@
             </p>
         </div>
     </div>
-{% endblock %}
+</body>
+</html>

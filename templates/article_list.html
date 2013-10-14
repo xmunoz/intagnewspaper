@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="content">
+        <div class="content-title">Articulos</div>
+        {% for article in articles %}
+        <a href="#" class="archive-block">
+            <div class="issue-title">{{ article.title }}</div>
+            <div class="issue-number">{{ article.issue_num }}</div>
+            <div class="issue-date">{{ article.date }}</div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

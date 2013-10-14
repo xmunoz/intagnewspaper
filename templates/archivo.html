@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="content">
+        <div class="content-title">Archivo de PDFs</div>
+
+        {% for pdf in archivo %}
+        <a class="archive-block" href="{{ pdf.link }}">
+            <img class="thumbnail" src="{{ pdf.thumbnail }}">    
+            <div class="issue-title">{{ pdf.title }}</div>
+            <div class="issue-number">{{ pdf.issue_num }}</div>
+            <div class="issue-date">{{ pdf.date }} </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
