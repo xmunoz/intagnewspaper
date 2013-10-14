@@ -34,4 +34,4 @@ def root(article_title):
     return render_template("article_single.html", title = title , article = article)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
