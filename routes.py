@@ -36,7 +36,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return render_template("homepage.html")
+    title = "Periodico Intag"
+    return render_template("homepage.html", page_title=title)
 
 @app.route("/articulos")
 def articulos():
@@ -56,4 +57,4 @@ def root(year, month, title):
     # return redirect( filepath )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
