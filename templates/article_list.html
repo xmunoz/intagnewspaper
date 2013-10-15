@@ -1,15 +1,50 @@
 {% extends "layout.html" %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/article_list_hashtag_handler.js"></script>
+{% endblock %}
+
 {% block body %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <div class="breadcrumb index">
+        <a href="#2012" year="2012" class="menu-tab top">
+            <div class="branch">2012</div>
+            <div class="twig"></div>
+            <div class="twig-cover"></div>
+        </a>
+
+        <a href="#2011" year="2011" class="menu-tab">
+            <div class="branch">2011</div>
+            <div class="twig"></div>
+            <div class="twig-cover"></div>
+        </a>
+
+        <a href="#2010" year="2010" class="menu-tab top">
+            <div class="branch">2010</div>
+            <div class="twig"></div>
+            <div class="twig-cover"></div>
+        </a>
+
+        <a href="#2009" year="2009" class="menu-tab">
+            <div class="branch">2009</div>
+            <div class="twig"></div>
+            <div class="twig-cover"></div>
+        </a>
+    </div>
+
     <div class="content">
-        <div class="content-title">Articulos</div>
+        <div class="articles-title">
+            <span>Articulos</span>
+            <span class="separator">|</span>
+            <span class="hash-year"></span>
+        </div>
         {% for year, article_list in articles.iteritems() %}
-            <div class="year">
-		<span>{{ year }}</span>
+            <div class="archive-loop" year="{{year}}">
             {% for article in article_list %}
-                <a href="articulos/{{ article.alias }}" class="article-block">
-                    <div class="title">{{ article.title }}</div>
-                    <div class="author">{{ article.author }}</div>
-                    <div class="date">{{ article.date }}</div>
+                <a href="articulos/{{ article.alias }}" class="archive-block">
+                    <div class="issue-title">{{ article.title }}</div>
+                    <div class="issue-author">{{ article.author }}</div>
+                    <div class="issue-date">{{ article.date }}</div>
                 </a>
             {% endfor %}
             </div>
