@@ -72,6 +72,7 @@ h1 {
     margin: 0 3%;
     min-width: 600px;
     text-align: right;
+    z-index: -1;
 }
 
 .nav-tab {
