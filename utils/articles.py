@@ -64,16 +64,12 @@ class Article:
         c.close()
 
     def load_all_data(self, db):
+        self.load_summary_data(db)
         c = db.cursor()
-        c.execute("SELECT title, author, date, intro, body FROM "\
-                "articles WHERE alias = %s;",
+        c.execute("SELECT body FROM articles WHERE alias = %s;",
                 self.alias)
         result = c.fetchone()
-        self.title = result[0]
-        self.author = result[1]
-        self.date = result[2]
-        self.intro = result[3]
-        self.body = result[4]
+        self.body = unicode(result[0], "utf8")
         c.close()
 
 def main():

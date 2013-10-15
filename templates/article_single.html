@@ -3,7 +3,7 @@
     <div class="content">
         <div class="article-title">{{ article.title }}</div>
         <div class="clearfix"></div>
-        {{ article.body }}
+        {{ article.body|safe  }}
         </div>
     </div>
 {% endblock %}

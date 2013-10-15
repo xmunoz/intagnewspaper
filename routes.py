@@ -11,19 +11,23 @@ def homepage():
 @app.route("/articulos")
 def articulos():
     articles = get_all_articles_summary()
-    return render_template("article_list.html", articles=articles)
+    title = 'Articulos | Periodico Intag'
+    return render_template("article_list.html", title=title,
+            articles=articles)
 
 @app.route("/archivo")
 def archivo():
-    title = "Periodico Intag | Archivo"
+    title = "Archivo | Periodico Intag"
     archivo = "archivo object"
-    return render_template("homepage.html", title=title, archivo=archivo)
+    return render_template("homepage.html", title=title,
+            archivo=archivo)
 
 @app.route("/articulos/<article_alias>")
-def root(article_alias):
-    title = "Periodico Intag | " + article_alias
+def single_article(article_alias):
     article = get_article_full(article_alias)
-    return render_template("article_single.html", title=title , article=article)
+    title = article.title + ' | Periodico Intag'
+    return render_template("article_single.html", title=title,
+            article=article)
 
 if __name__ == "__main__":
     app.run(debug=True)
