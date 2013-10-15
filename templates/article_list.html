@@ -2,12 +2,18 @@
 {% block body %}
     <div class="content">
         <div class="content-title">Articulos</div>
-        {% for article in articles %}
-        <a href="#" class="archive-block">
-            <div class="issue-title">{{ article.title }}</div>
-            <div class="issue-number">{{ article.issue_num }}</div>
-            <div class="issue-date">{{ article.date }}</div>
-        </a>
+        {% for year, article_list in articles.iteritems() %}
+            <div class="year">
+		<span>{{ year }}</span>
+            {% for article in article_list %}
+                <a href="articulos/{{ article.alias }}" class="article-block">
+                    <div class="title">{{ article.title }}</div>
+                    <div class="author">{{ article.author }}</div>
+                    <div class="date">{{ article.date }}</div>
+                </a>
+            {% endfor %}
+            </div>
         {% endfor %}
+        </div>
     </div>
 {% endblock %}
