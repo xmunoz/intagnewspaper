@@ -72,6 +72,7 @@ h1 {
     margin: 0 3%;
     min-width: 600px;
     text-align: right;
+    z-index: -1;
 }
 
 .nav-tab {
@@ -85,7 +86,7 @@ h1 {
     color: #000;
 }
 
-.nav .separator {
+.intag .separator {
     color: #8B0;
 }
 
@@ -116,6 +117,9 @@ h1 {
     clear: left;
     margin-left: 16px;
 }
+
+/* #branch #breadcrumb */
+
 
 .breadcrumb {
     width: 94%;
@@ -151,10 +155,6 @@ h1 {
     color: #000;
 }
 
-/*.branch:hover {
-    color: #000;
-}*/
-
 .twig {
     margin-top: -4px;
     margin-right: -1px;
@@ -173,8 +173,7 @@ h1 {
     border-left: 50px solid transparent;
 }
 
-
-.twig-cover.top {
+.top .twig-cover {
     margin-top: -35px;
     margin-right: -4px;
     border-bottom: 30px solid #FFF;
@@ -182,20 +181,83 @@ h1 {
     border-top: none;
 }
 
-.branch.top {
+.top .branch {
     margin-top: -35px;
     margin-bottom: 30px;
     border-top: 1px solid #8B0;
     border-bottom: none;
 }
 
-.twig.top {
+.top .twig {
     border-bottom: 30px solid #8B0;
     border-left: 50px solid transparent;
     border-top: none;
     margin-top: -35px;
     margin-right: -2px;
 }
+
+/* Article Index Branch Breadcrumb */
+
+.index .menu-tab {
+    position: relative;
+    margin-left: -58px;
+    display: inline-block;
+    float: right;
+    right: auto;
+}
+
+.index .menu-tab:not(.top) {
+    margin-left: -34px;
+    margin-right: -24px;
+}
+
+.index .menu-tab .branch {
+    margin-right: 0;
+}
+
+.index .menu-tab.selected * {
+    color: #b80;
+}
+
+.index .top .twig-cover {
+    margin-top: -35px;
+    margin-right: -4px;
+    border-bottom: 30px solid #FFF;
+    border-left: 50px solid transparent;
+    border-top: none;
+}
+
+.index .top .branch {
+    margin-top: -35px;
+    margin-bottom: 30px;
+    border-top: 1px solid #8B0;
+    border-bottom: none;
+}
+
+.index .top .twig {
+    border-bottom: 30px solid #8B0;
+    border-left: 50px solid transparent;
+    border-top: none;
+    margin-top: -35px;
+    margin-right: -2px;
+}
+
+.index .menu-tab:hover * {
+    color: #b80;
+}
+
+.articles-title {
+    font-size: 30px;
+    display: block;
+    text-align: left;
+    line-height: 40px;
+    font-weight: 100;
+    border-bottom: 1px solid #8B0;
+    margin: 40px 0 24px -3px;
+    padding-left: 3px;
+}
+
+/* #content */
 
 .content {
     width: 94%;
@@ -285,11 +347,15 @@ h1 {
     font-size: 30px;
     display: block;
     text-align: left;
-    line-height: 60px;
+    line-height: 40px;
     font-weight: 100;
     border-bottom: 1px solid #8B0;
-    margin: 26px 0 8px -3px;
+    margin: 40px 0 8px -3px;
     padding-left: 3px;
+}
+
+.content-title a:hover {
+    color: #b80;
 }
 
 .content .thumbnail {
@@ -308,6 +374,14 @@ h1 {
     color: #fff;
 }
 
+.content .archive-loop {
+    display: none;
+}
+
+.content .archive-loop.display {
+    display: block
+}
+
 .content .archive-block:hover {
     background-color: #707075;
     border-color: #707075;
@@ -320,6 +394,7 @@ h1 {
     float: left;
     border-bottom: 1px solid #8b0;
     padding: 18px 0 16px 14px;
+    border-top-left-radius: 16px;
 }
 
 .issue-number {
