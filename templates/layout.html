@@ -4,13 +4,17 @@
     <title>{{ title }}</title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/reset.css') }}">
+
+    {% block javascript %}
+    {% endblock %}
+
 </head>
 
 <body id="intag" class="intag">
 
     <div class="header">
         <div class="tiny">Periódico</div>
-        <a class="header-title mono" href="">
+        <a class="header-title mono" href="/">
             <div>Intag</div>
         </a>
         <div class="clearfix"></div>

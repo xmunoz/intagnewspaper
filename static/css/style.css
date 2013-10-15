@@ -358,6 +358,14 @@ h1 {
     color: #b80;
 }
 
+.content .archive-loop {
+    display: none;
+}
+
+.content .archive-loop.display {
+    display: block
+}
+
 .content .thumbnail {
     max-width: 25%;
     max-height: 170px;
@@ -372,14 +380,6 @@ h1 {
 
 .content .archive-block:hover * {
     color: #fff;
-}
-
-.content .archive-loop {
-    display: none;
-}
-
-.content .archive-loop.display {
-    display: block
 }
 
 .content .archive-block:hover {
