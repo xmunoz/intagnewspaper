@@ -7,29 +7,13 @@
 {% block body %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
     <div class="breadcrumb index">
-        <a href="#2012" year="2012" class="menu-tab top">
-            <div class="branch">2012</div>
+        {% for year in articles.keys() %}
+        <a href="#{{ year }}" year="{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
+            <div class="branch">{{ year }}</div>
             <div class="twig"></div>
             <div class="twig-cover"></div>
         </a>
-
-        <a href="#2011" year="2011" class="menu-tab">
-            <div class="branch">2011</div>
-            <div class="twig"></div>
-            <div class="twig-cover"></div>
-        </a>
-
-        <a href="#2010" year="2010" class="menu-tab top">
-            <div class="branch">2010</div>
-            <div class="twig"></div>
-            <div class="twig-cover"></div>
-        </a>
-
-        <a href="#2009" year="2009" class="menu-tab">
-            <div class="branch">2009</div>
-            <div class="twig"></div>
-            <div class="twig-cover"></div>
-        </a>
+        {% endfor %}
     </div>
 
     <div class="content">
