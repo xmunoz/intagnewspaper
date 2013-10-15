@@ -29,5 +29,13 @@ def single_article(article_alias):
     return render_template("article_single.html", title=title,
             article=article)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def site_down(e):
+    return render_template('500.html', error=e), 500
+
 if __name__ == "__main__":
     app.run(debug=True)
