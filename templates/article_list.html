@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block javascript %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/article_list_hashtag_handler.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
     <div class="breadcrumb index">
         {% for year in articles.keys() %}
-        <a href="#{{ year }}" year="{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
+        <a href="#{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
             <div class="branch">{{ year }}</div>
             <div class="twig"></div>
             <div class="twig-cover"></div>

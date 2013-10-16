@@ -65,14 +65,11 @@ h1 {
 }
 
 .nav {
-    position: absolute;
-    top: 26px;
-    left: 0;
-    width: 94%;
-    margin: 0 3%;
-    min-width: 600px;
-    text-align: right;
-    z-index: -1;
+    position: relative;
+    display: inline-block;
+    margin-top: 26px;
+    margin-right: 3%;
+    float: right;
 }
 
 .nav-tab {
@@ -198,6 +195,10 @@ h1 {
 
 /* Article Index Branch Breadcrumb */
 
+.index.breadcrumb {
+    border-color: transparent;
+}
+
 .index .menu-tab {
     position: relative;
     margin-left: -58px;
@@ -302,7 +303,7 @@ h1 {
     width: 20%;
     display: inline-block;
     float: right;
-    margin-top: 44px;
+    margin-top: 38px;
     margin-right: -8px;
 }
 
@@ -393,39 +394,46 @@ h1 {
     width: 97%;
     float: left;
     border-bottom: 1px solid #8b0;
-    padding: 18px 0 16px 14px;
+    padding: 18px 2% 16px 2%;
     border-top-left-radius: 16px;
 }
 
 .issue-number {
     font-size: 18px;
     font-weight: 100;
-    line-height: 1.2em;
+    line-height: 1.4em;
 }
 
 .issue-title {
     font-size: 30px;
     font-weight: 100;
-    line-height: 1em;
+    line-height: 1.2em;
     margin-bottom: 3px;
     border-bottom: 1px solid transparent;
     display: inline-block;
 }
 
+.issue-author {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.5em;
+}
+
 .issue-date {
     font-size: 18px;
     font-weight: 100;
-    line-height: 1.2em;
+    line-height: 1.5em;
 }
 
 @media (min-width: 700px) {
     .content .archive-block {
-        width: 47%;
+        width: 44%;
         border-right: 1px solid #8b0;
+        min-height: 130px;
     }
 
     .content .archive-block:nth-of-type(odd) {
-        margin-right: 1%;
+        margin-right: 3%;
         clear: both;
     }
 }
