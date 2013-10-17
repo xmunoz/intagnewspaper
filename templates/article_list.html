@@ -7,7 +7,7 @@
 
 {% block body %}
     <div class="breadcrumb index">
-        {% for year in articles.keys() %}
+        {% for year in articles.keys()|sort(reverse=True) %}
         <a href="#{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
             <div class="branch">{{ year }}</div>
             <div class="twig"></div>
