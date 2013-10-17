@@ -47,8 +47,8 @@ var hash_action = function(hash_obj) {
 
 var update_toolkit = function (hash_obj, current_hash) {
     hash_obj.el = $(".archive-loop[year='" + current_hash + "']");
-    hash_obj.siblings = $(".archive-loop:not([year='" + current_hash + "']");
+    hash_obj.siblings = $(".archive-loop").not("[year='" + current_hash + "']");
     hash_obj.tab_el = $(".menu-tab[href='#" + current_hash + "']");
-    hash_obj.tab_siblings = $(".menu-tab:not([href='#" + current_hash + "']");
+    hash_obj.tab_siblings = $(".menu-tab").not("[href='#" + current_hash + "']");
     hash_obj.year = current_hash
 }
