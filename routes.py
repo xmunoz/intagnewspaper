@@ -1,6 +1,5 @@
 from flask import Flask, url_for, redirect, render_template, g
-from utils.articles import get_all_articles_summary, get_article_full
-from utils.pdfs import get_all_pdfs
+from utils.common import get_index_data, get_article_full
 
 app = Flask(__name__)
 
@@ -11,7 +10,7 @@ def homepage():
 
 @app.route("/articulos")
 def articulos():
-    articles = get_all_articles_summary()
+    articles = get_index_data('Article')
     title = 'Articulos'
     return render_template("index_page.html", type='article',
             title=title, items=articles)
@@ -19,7 +18,7 @@ def articulos():
 @app.route("/archivo")
 def archivo():
     title = "Archivo"
-    pdfs = get_all_pdfs()
+    pdfs = get_index_data('PDF')
     return render_template("index_page.html", type='pdf', title=title,
             items=pdfs)
 
