@@ -1,4 +1,4 @@
-#! /usr/bin/emv python
+#! /usr/bin/env python
 
 from articles import Article
 from pdfs import PDF
