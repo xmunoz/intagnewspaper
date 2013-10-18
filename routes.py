@@ -1,5 +1,6 @@
 from flask import Flask, url_for, redirect, render_template, g
 from utils.articles import get_all_articles_summary, get_article_full
+from utils.pdfs import get_all_pdfs
 
 app = Flask(__name__)
 
@@ -18,9 +19,9 @@ def articulos():
 @app.route("/archivo")
 def archivo():
     title = "Archivo | Periodico Intag"
-    archivo = "archivo object"
-    return render_template("homepage.html", title=title,
-            archivo=archivo)
+    pdf_archive = get_all_pdfs()
+    return render_template("archivo.html", title=title,
+            pdfs=pdf_archive)
 
 @app.route("/articulos/<article_alias>")
 def single_article(article_alias):

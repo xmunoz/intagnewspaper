@@ -1,15 +1,39 @@
 {% extends "layout.html" %}
-{% block body %}
-    <div class="content">
-        <div class="content-title">Archivo de PDFs</div>
 
-        {% for pdf in archivo %}
-        <a class="archive-block" href="{{ pdf.link }}">
-            <img class="thumbnail" src="{{ pdf.thumbnail }}">    
-            <div class="issue-title">{{ pdf.title }}</div>
-            <div class="issue-number">{{ pdf.issue_num }}</div>
-            <div class="issue-date">{{ pdf.date }} </div>
+{% block javascript %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/article_list_hashtag_handler.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="breadcrumb index">
+        {% for year in pdfs.keys()|sort(reverse=True) %}
+        <a href="#{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
+            <div class="branch">{{ year }}</div>
+            <div class="twig"></div>
+            <div class="twig-cover"></div>
         </a>
         {% endfor %}
     </div>
+    
+    <div class="content">
+        <div class="articles-title">
+            <span>Archivo</span>
+            <span class="separator">|</span>
+            <span class="hash-year"></span>
+        </div> 
+        {% for year, pdf_list in pdfs.iteritems() %}
+        <div class="archive-loop" year="{{ year }}">
+            {% for pdf in pdf_list %}
+            <a class="archive-block" href="{{ url_for('static', filename='pdfs/%s' % pdf.filename) }}">
+                <img class="thumbnail" src="{{ url_for('static', filename='thumbnails/%s' % pdf.thumbnail_filename) }}">    
+                <div class="issue-title">{{ pdf.headline }}</div>
+                <div class="issue-number">{{ pdf.issue }}</div>
+                <div class="issue-date">{{ pdf.date.month }} {{ pdf.date.year }}</div>
+            </a>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+</div>
 {% endblock %}
