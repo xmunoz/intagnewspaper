@@ -18,7 +18,7 @@ class Article:
         c.close()
 
     def load_all_data(self, db):
-        self.load_summary_data(db)
+        self.load_index_data(db)
         c = db.cursor()
         c.execute("SELECT body FROM articles WHERE alias = %s;",
                 self.alias)
