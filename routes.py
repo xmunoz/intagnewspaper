@@ -12,16 +12,16 @@ def homepage():
 @app.route("/articulos")
 def articulos():
     articles = get_all_articles_summary()
-    title = 'Articulos | Periodico Intag'
-    return render_template("article_list.html", title=title,
-            articles=articles)
+    title = 'Articulos'
+    return render_template("index_page.html", type='article',
+            title=title, items=articles)
 
 @app.route("/archivo")
 def archivo():
-    title = "Archivo | Periodico Intag"
-    pdf_archive = get_all_pdfs()
-    return render_template("archivo.html", title=title,
-            pdfs=pdf_archive)
+    title = "Archivo"
+    pdfs = get_all_pdfs()
+    return render_template("index_page.html", type='pdf', title=title,
+            items=pdfs)
 
 @app.route("/articulos/<article_alias>")
 def single_article(article_alias):

@@ -1,0 +1,7 @@
+
+<a class="archive-block" href="{{ url_for('static', filename='pdfs/%s' % item.filename) }}">
+    <img class="thumbnail" src="{{ url_for('static', filename='thumbnails/%s' % item.thumbnail_filename) }}">    
+    <div class="issue-title">{{ item.headline }}</div>
+    <div class="issue-number">{{ item.issue }}</div>
+    <div class="issue-date">{{ item.date.month }} {{ item.date.year }}</div>
+</a>

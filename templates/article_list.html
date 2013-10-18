@@ -1,38 +1,5 @@
-{% extends "layout.html" %}
-
-{% block javascript %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/article_list_hashtag_handler.js') }}"></script>
-{% endblock %}
-
-{% block body %}
-    <div class="breadcrumb index">
-        {% for year in articles.keys()|sort(reverse=True) %}
-        <a href="#{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
-            <div class="branch">{{ year }}</div>
-            <div class="twig"></div>
-            <div class="twig-cover"></div>
-        </a>
-        {% endfor %}
-    </div>
-
-    <div class="content">
-        <div class="articles-title">
-            <span>Articulos</span>
-            <span class="separator">|</span>
-            <span class="hash-year"></span>
-        </div>
-        {% for year, article_list in articles.iteritems() %}
-            <div class="archive-loop" year="{{year}}">
-            {% for article in article_list %}
-                <a href="articulos/{{ article.alias }}" class="archive-block">
-                    <div class="issue-title">{{ article.title }}</div>
-                    <div class="issue-author">{{ article.author }}</div>
-                    <div class="issue-date">{{ article.date }}</div>
-                </a>
-            {% endfor %}
-            </div>
-        {% endfor %}
-        </div>
-    </div>
-{% endblock %}
+<a href="articulos/{{ item.alias }}" class="archive-block">
+    <div class="issue-title">{{ item.title }}</div>
+    <div class="issue-author">{{ item.author }}</div>
+    <div class="issue-date">{{ item.date }}</div>
+</a>

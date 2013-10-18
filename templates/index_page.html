@@ -7,7 +7,7 @@
 
 {% block body %}
     <div class="breadcrumb index">
-        {% for year in pdfs.keys()|sort(reverse=True) %}
+        {% for year in items.keys()|sort(reverse=True) %}
         <a href="#{{ year }}" class="menu-tab {{ loop.cycle('top', '') }}">
             <div class="branch">{{ year }}</div>
             <div class="twig"></div>
@@ -18,19 +18,14 @@
     
     <div class="content">
         <div class="articles-title">
-            <span>Archivo</span>
+            <span>{{ title }}</span>
             <span class="separator">|</span>
             <span class="hash-year"></span>
         </div> 
-        {% for year, pdf_list in pdfs.iteritems() %}
+        {% for year, item_list in items.iteritems() %}
         <div class="archive-loop" year="{{ year }}">
-            {% for pdf in pdf_list %}
-            <a class="archive-block" href="{{ url_for('static', filename='pdfs/%s' % pdf.filename) }}">
-                <img class="thumbnail" src="{{ url_for('static', filename='thumbnails/%s' % pdf.thumbnail_filename) }}">    
-                <div class="issue-title">{{ pdf.headline }}</div>
-                <div class="issue-number">{{ pdf.issue }}</div>
-                <div class="issue-date">{{ pdf.date.month }} {{ pdf.date.year }}</div>
-            </a>
+            {% for item in item_list %}
+                {% set template = type + '_list.html' %} {% include template %}
             {% endfor %}
         </div>
     {% endfor %}
