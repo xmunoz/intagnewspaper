@@ -121,10 +121,15 @@ h1 {
 .breadcrumb {
     width: 94%;
     min-width: 600px;
-    border-top: 1px solid #8B0;
     padding-top: 4px;
     position: absolute;
     margin: 128px 2% 0 2%;
+}
+
+.stem {
+    width: 100%;
+    height: 1px;
+    background-color: #8b0;
 }
 
 .menu-tab {
@@ -141,7 +146,6 @@ h1 {
     border-bottom: 1px solid #8B0;
     float: right;
     margin-left: 1px;
-    margin-top: -4px;
     padding: 9px 18px 7px 14px;
     font-weight: 200;
     font-size: 14px;
@@ -154,7 +158,6 @@ h1 {
 }
 
 .twig {
-    margin-top: -4px;
     margin-right: -1px;
     display: inline-block;
     border-top: 30px solid #8B0;
@@ -163,7 +166,6 @@ h1 {
 }
 
 .twig-cover {
-    margin-top: -4px;
     border-top: 30px solid #FFF;
     border-left: 50px solid transparent;
     position: absolute;
@@ -171,7 +173,7 @@ h1 {
 }
 
 .top .twig-cover {
-    margin-top: -35px;
+    margin-top: -31px;
     margin-right: -4px;
     border-bottom: 30px solid #FFF;
     border-left: 50px solid transparent;
@@ -179,7 +181,7 @@ h1 {
 }
 
 .top .branch {
-    margin-top: -35px;
+    margin-top: -31px;
     margin-bottom: 30px;
     border-top: 1px solid #8B0;
     border-bottom: none;
@@ -189,27 +191,24 @@ h1 {
     border-bottom: 30px solid #8B0;
     border-left: 50px solid transparent;
     border-top: none;
-    margin-top: -35px;
+    margin-top: -31px;
     margin-right: -2px;
 }
 
 /* Article Index Branch Breadcrumb */
 
-.index.breadcrumb {
-    border-color: transparent;
-}
-
 .index .menu-tab {
     position: relative;
-    margin-left: -58px;
+    margin-left: -38px;
+    margin-right: 42px;
     display: inline-block;
     float: right;
     right: auto;
 }
 
 .index .menu-tab:not(.top) {
-    margin-left: -34px;
-    margin-right: -24px;
+    margin-left: -84px;
+    margin-right: -4px;
 }
 
 .index .menu-tab .branch {
@@ -221,7 +220,7 @@ h1 {
 }
 
 .index .top .twig-cover {
-    margin-top: -35px;
+    margin-top: -31px;
     margin-right: -4px;
     border-bottom: 30px solid #FFF;
     border-left: 50px solid transparent;
@@ -229,7 +228,7 @@ h1 {
 }
 
 .index .top .branch {
-    margin: -35px 0 30px 1px;
+    margin: -31px 0 30px 1px;
     border-top: 1px solid #8B0;
     border-bottom: none;
 
@@ -239,7 +238,7 @@ h1 {
     border-bottom: 30px solid #8B0;
     border-left: 50px solid transparent;
     border-top: none;
-    margin-top: -35px;
+    margin-top: -31px;
     margin-right: -2px;
 }
 
@@ -253,8 +252,7 @@ h1 {
     text-align: left;
     line-height: 40px;
     font-weight: 100;
-    border-bottom: 1px solid #8B0;
-    margin: 40px 0 24px -3px;
+    margin: 40px 0 30px -3px;
     padding-left: 3px;
 }
 
