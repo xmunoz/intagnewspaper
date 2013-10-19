@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
-    <div class="breadcrumb">
-        <div class="menu-tab top">
+    <div class="breadcrumb index">
+        <div class="stem"></div>
+        <a class="menu-tab top" href="../articulos#{{ article.date.year}}" >
             <div class="branch top">{{ article.date.year }}</div>
             <div class="twig top"></div>
             <div class="twig-cover top"></div>
-        </div>
+        </a>
         <div class="menu-tab">
             <div class="branch">{{ article.date.month }}</div>
             <div class="twig"></div>
