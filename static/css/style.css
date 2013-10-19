@@ -398,6 +398,11 @@ h1 {
     border-top-left-radius: 16px;
 }
 
+.archive-block-text {
+    float: right;
+    width: 68%;
+}
+
 .issue-number {
     font-size: 18px;
     font-weight: 100;
