@@ -199,8 +199,8 @@ h1 {
 
 .index .menu-tab {
     position: relative;
-    margin-left: -38px;
-    margin-right: 42px;
+    margin-left: -54px;
+    margin-right: 26px;
     display: inline-block;
     float: right;
     right: auto;
@@ -248,12 +248,16 @@ h1 {
 
 .articles-title {
     font-size: 30px;
-    display: block;
+    display: inline-block;
     text-align: left;
-    line-height: 40px;
+    line-height: 44px;
     font-weight: 100;
     margin: 40px 0 30px -3px;
     padding-left: 3px;
+}
+
+.article-list .articles-title {
+    max-width: 27%;
 }
 
 /* #content */

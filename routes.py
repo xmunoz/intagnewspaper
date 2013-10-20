@@ -19,8 +19,9 @@ def articulos():
 def archivo():
     title = "Archivo"
     pdfs = get_index_data('PDF')
+    body_class = "article-list"
     return render_template("index_page.html", type='pdf', title=title,
-            items=pdfs)
+            items=pdfs, body_class=body_class)
 
 @app.route("/articulos/<article_alias>")
 def single_article(article_alias):
