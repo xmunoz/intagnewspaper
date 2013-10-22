@@ -444,3 +444,7 @@ h1 {
         clear: both;
     }
 }
+
+div.author {
+    padding-bottom: 10px;
+}
