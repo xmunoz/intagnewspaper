@@ -1,4 +1,4 @@
-<a href="articulos/{{ item.alias }}" class="archive-block">
+<a href="{{ url_for('articles', article_alias=item.alias) }}" class="archive-block">
     <div class="issue-title">{{ item.title }}</div>
     <div class="issue-author">{{ item.author }}</div>
     <div class="issue-date">{{ item.date }}</div>

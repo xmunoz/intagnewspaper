@@ -242,7 +242,7 @@ h1 {
     margin-right: -2px;
 }
 
-.index .menu-tab:hover * {
+.index a.menu-tab:hover * {
     color: #b80;
 }
 

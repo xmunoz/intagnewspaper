@@ -2,13 +2,13 @@
 {% block body %}
     <div class="breadcrumb index">
         <div class="stem"></div>
-        <a class="menu-tab top" href="../articulos#{{ article.date.year}}" >
+        <a class="menu-tab top" href="{{ url_for('articles') }}#{{ article.date.year }}" >
             <div class="branch top">{{ article.date.year }}</div>
             <div class="twig top"></div>
             <div class="twig-cover top"></div>
         </a>
         <div class="menu-tab">
-            <div class="branch">{{ article.date.month }}</div>
+            <div class="branch">{{ article.date.strftime('%B') }}</div>
             <div class="twig"></div>
             <div class="twig-cover"></div>
         </div>
@@ -16,6 +16,7 @@
     <div class="content">
         <div class="article-title">{{ article.title }}</div>
         <div class="clearfix"></div>
+        <div class="author">By {{ article.author }}</div>
         {{ article.body|safe  }}
         </div>
     </div>
