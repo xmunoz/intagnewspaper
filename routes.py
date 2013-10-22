@@ -1,9 +1,14 @@
 from flask import Flask, url_for, redirect, render_template, g, request
-from flask.ext.babel import Babel
+from flask.ext.babel import Babel, gettext
+from config import LANGUAGES
 from src.common import get_index_data, get_article_full
 
 app = Flask(__name__)
 babel = Babel(app)
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())
 
 @app.route("/")
 def homepage():
@@ -12,7 +17,7 @@ def homepage():
 
 @app.route("/archive")
 def archive():
-    title = "Archive"
+    title = gettext("Archive")
     pdfs = get_index_data('PDF')
     body_class = "article-list"
     return render_template("index_page.html", type='pdf', title=title,
@@ -28,7 +33,7 @@ def articles(article_alias=None):
                 article=article)
     else:
         articles = get_index_data('Article')
-        title = 'Articles'
+        title = gettext('Articles')
         return render_template("index_page.html", type='article',
                 title=title, items=articles)
 
@@ -39,10 +44,6 @@ def page_not_found(e):
 @app.errorhandler(500)
 def site_down(e):
     return render_template('500.html', error=e), 500
-
-@babel.localeselector
-def get_locale():
-    return request.accept_languages.best_match(['en', 'es'])
 
 if __name__ == "__main__":
     app.run(debug=True)

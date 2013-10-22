@@ -16,7 +16,7 @@
     <div class="content">
         <div class="article-title">{{ article.title }}</div>
         <div class="clearfix"></div>
-        <div class="author">By {{ article.author }}</div>
+        <div class="author">{{ _('By') }} {{ article.author }}</div>
         {{ article.body|safe  }}
         </div>
     </div>
