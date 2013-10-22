@@ -1,5 +1,5 @@
 from flask import Flask, url_for, redirect, render_template, g, request
-from flask.ext.babel import Babel, gettext
+from flask.ext.babel import Babel, gettext, format_date
 from config import LANGUAGES
 from src.common import get_index_data, get_article_full
 
@@ -44,6 +44,11 @@ def page_not_found(e):
 @app.errorhandler(500)
 def site_down(e):
     return render_template('500.html', error=e), 500
+
+@app.template_filter('month')
+def format_as_month(value):
+    form="MMMM"
+    return format_date(value, form).capitalize()
 
 if __name__ == "__main__":
     app.run(debug=True)

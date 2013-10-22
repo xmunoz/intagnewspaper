@@ -8,7 +8,7 @@
             <div class="twig-cover top"></div>
         </a>
         <div class="menu-tab">
-            <div class="branch">{{ article.date.strftime('%B') }}</div>
+            <div class="branch">{{ article.date | month }}</div>
             <div class="twig"></div>
             <div class="twig-cover"></div>
         </div>

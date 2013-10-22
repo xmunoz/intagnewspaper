@@ -4,6 +4,6 @@
     <div class="archive-block-text">
         <div class="issue-title">{{ item.headline }}</div>
         <div class="issue-number">{{ _('Issue') }} {{ item.issue }}</div>
-        <div class="issue-date">{{ item.date.strftime('%B') }} {{ item.date.year }}</div>
+        <div class="issue-date">{{ item.date | month }} {{ item.date.year }}</div>
     </div>
 </a>
