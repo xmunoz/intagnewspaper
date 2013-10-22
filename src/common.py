@@ -48,7 +48,18 @@ def get_index_data(object_type):
             objects_by_year[ob.date.year] = [ob]
 
     db.commit()
+
+    sort_objects(objects_by_year)
+
     return objects_by_year
+
+def sort_objects(objects):
+    '''
+    Sort items by date.
+    '''
+    for k,v in objects.iteritems():
+        objects[k] = sorted(v, key=lambda x: x.date)
+
 
 
 def get_article_full(alias):
