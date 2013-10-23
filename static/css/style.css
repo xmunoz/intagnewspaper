@@ -291,7 +291,9 @@ h1 {
 
 .tiny {
     position: absolute;
+    transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     margin-top: 60px;
     margin-left: -62px;
     font-weight: 100;
