@@ -21,28 +21,21 @@ $(function() {
     }
 
     update_toolkit(hash_toolkit, set_year);
-
     hash_action(hash_toolkit);
 })
 
 $(window).on("hashchange", function(ev) {
     hash_toolkit.year = window.location.hash.substring(1)
-    console.log('asdasd')
     update_toolkit( hash_toolkit, window.location.hash.substring(1) )
-
     hash_action(hash_toolkit);
 })
 
 var hash_action = function(hash_obj) {
     hash_obj.year_display_el.html( hash_obj.year )
-
-    console.log('action', hash_obj);
-
     hash_obj.el.addClass("display");
     hash_obj.siblings.removeClass("display");
     hash_obj.tab_el.addClass("selected");
     hash_obj.tab_siblings.removeClass("selected");
-
 }
 
 var update_toolkit = function (hash_obj, current_hash) {
