@@ -1,4 +1,4 @@
-from flask import Flask, url_for, redirect, render_template, g, request
+from flask import Flask, render_template, request
 from flask.ext.babel import Babel, gettext, format_date
 from config import LANGUAGES
 from src.common import get_index_data, get_article_full

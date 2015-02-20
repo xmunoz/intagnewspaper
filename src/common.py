@@ -1,15 +1,19 @@
 #! /usr/bin/env python
 
-from articles import Article
-from pdfs import PDF
 from MySQLdb import connect
 from pprint import pprint
+import os.path, inspect
+
+from articles import Article
+from pdfs import PDF
 
 def get_db():
     '''
     Return db object.
     '''
-    db = connect(host="localhost", db="intagdb", user='intag', read_default_file="/home/intag/.my.cnf")
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))))
+    cnf_file = os.path.join(project_dir, ".my.cnf")
+    db = connect(host="localhost", db="intagdb", user='intag', read_default_file=cnf_file)
     db.set_character_set('utf8')
     return db
 
@@ -73,6 +77,7 @@ def get_article_full(alias):
     return article
 
 def main():
+    # debugging
     pprint(get_index_data('Article'))
 
 if __name__ == '__main__':
