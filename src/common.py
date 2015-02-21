@@ -57,13 +57,13 @@ def get_index_data(object_type):
 
     return objects_by_year
 
+
 def sort_objects(objects):
     '''
     Sort items by date.
     '''
     for k,v in objects.iteritems():
         objects[k] = sorted(v, key=lambda x: x.date)
-
 
 
 def get_article_full(alias):
@@ -78,6 +78,7 @@ def get_article_full(alias):
 
 def main():
     # debugging
+    pprint(get_index_data('PDF'))
     pprint(get_index_data('Article'))
 
 if __name__ == '__main__':

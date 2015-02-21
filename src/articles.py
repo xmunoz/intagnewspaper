@@ -8,8 +8,7 @@ class Article:
 
     def load_index_data(self, db):
         c = db.cursor()
-        c.execute("SELECT title, author, date, intro FROM articles "\
-                "WHERE alias = %s;", self.alias)
+        c.execute("SELECT title, author, date, intro FROM articles WHERE alias LIKE '%s';" % self.alias)
         result = c.fetchone()
         self.title = unicode(result[0], "utf8")
         self.author = unicode(result[1], "utf8")
@@ -20,8 +19,7 @@ class Article:
     def load_all_data(self, db):
         self.load_index_data(db)
         c = db.cursor()
-        c.execute("SELECT body FROM articles WHERE alias = %s;",
-                self.alias)
+        c.execute("SELECT body FROM articles WHERE alias LIKE '%s';" % self.alias)
         result = c.fetchone()
         self.body = unicode(result[0], "utf8")
         c.close()

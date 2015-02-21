@@ -8,8 +8,7 @@ class PDF:
 
     def load_index_data(self, db):
         c = db.cursor()
-        c.execute("SELECT headline, filename, thumbnail, date FROM pdfs "\
-                "WHERE issue_number = %s;", self.issue)
+        c.execute("SELECT headline, filename, thumbnail, date FROM pdfs WHERE issue_number = %d;" % self.issue)
         result = c.fetchone()
         self.headline = unicode(result[0], "utf8")
         self.filename = result[1]
