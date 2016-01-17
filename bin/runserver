@@ -1,0 +1,5 @@
+#!/bin/sh
+
+root_dir="${PWD%/bin}"
+cd "$root_dir"
+uwsgi --http 127.0.0.1:30312 --wsgi-file intag.wsgi --static-check static/ --venv venv_intag
