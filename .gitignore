@@ -1,4 +1,4 @@
 *.py[cod]
 *.my.cnf
 .DS_Store
-venv_*
+venv*
