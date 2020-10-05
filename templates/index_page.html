@@ -23,7 +23,7 @@
             <span class="separator">|</span>
             <span class="hash-year"></span>
         </div> 
-        {% for year, item_list in items.iteritems() %}
+        {% for year, item_list in items.items() %}
         <div class="archive-loop" year="{{ year }}">
             {% for item in item_list %}
                 {% set template = type + '_list.html' %} {% include template %}
