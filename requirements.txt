@@ -2,4 +2,4 @@ Babel==2.9.0
 Flask==1.1.2
 Flask-Babel==2.0.0
 Jinja2==2.11.2
-mysqlclient==2.0.1
+mysqlclient==2.0.3
