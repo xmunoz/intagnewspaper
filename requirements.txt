@@ -1,5 +1,5 @@
 Babel==2.9.1
-Flask==2.0.0
+Flask==2.0.1
 Flask-Babel==2.0.0
 Jinja2==3.0.1
 mysqlclient==2.0.3
