@@ -7,9 +7,9 @@ genpwd() {
 userpass=$(genpwd)
 username="intag"
 dbname="intagdb"
-mysql -u root -p${1} -e "CREATE DATABASE IF NOT EXISTS $dbname"
-mysql -u root -p${1} -e "CREATE USER '$username'@'localhost' IDENTIFIED BY '$userpass';"
-mysql -u root -p${1} -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$username'@'localhost';"
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS $dbname"
+mysql -u root -e "CREATE USER '$username'@'localhost' IDENTIFIED BY '$userpass';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$username'@'localhost';"
 
 root_dir="${PWD%/bin}"
 conf_file="$root_dir/.my.cnf"
@@ -25,5 +25,5 @@ connect_timeout=2
 interactive-timeout
 EOF
 
-dump_file="$root_dir/dumps/04022015_dump.sql"
+dump_file="$root_dir/dumps/19042023_dump.sql"
 mysql -u $username -p$userpass $dbname < $dump_file

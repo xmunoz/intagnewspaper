@@ -2,3 +2,5 @@
 *.my.cnf
 .DS_Store
 venv*
+static/pdfs/*
+static/thumbnails/*

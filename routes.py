@@ -3,22 +3,21 @@ from flask_babel import Babel, gettext, format_date
 from config import LANGUAGES
 from src.common import get_index_data, get_article_full
 
-app = Flask(__name__)
-babel = Babel(app)
+application = Flask(__name__)
+babel = Babel(application)
 
-
-@babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(LANGUAGES.keys())
 
+babel.init_app(application, locale_selector=get_locale)
 
-@app.route("/")
+@application.route("/")
 def homepage():
     title = "Periodico Intag"
     return render_template("homepage.html", title=title)
 
 
-@app.route("/archive")
+@application.route("/archive")
 def archive():
     title = gettext("Archive")
     pdfs = get_index_data("PDF")
@@ -28,8 +27,8 @@ def archive():
     )
 
 
-@app.route("/articles")
-@app.route("/articles/<article_alias>")
+@application.route("/articles")
+@application.route("/articles/<article_alias>")
 def articles(article_alias=None):
     if article_alias:
         article = get_article_full(article_alias)
@@ -43,21 +42,21 @@ def articles(article_alias=None):
         )
 
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
 
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def site_down(e):
     return render_template("500.html", error=e), 500
 
 
-@app.template_filter("month")
+@application.template_filter("month")
 def format_as_month(value):
     form = "MMMM"
     return format_date(value, form).capitalize()
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
