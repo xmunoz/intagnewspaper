@@ -21,7 +21,7 @@ Set this up as a systemd service with the following config.
 
 ```
 # cat /etc/systemd/system/intagnewspaper.service
-Unit]
+[Unit]
 Description=uWSGI instance to serve intagnewspaper.org 
 After=network.target
 
