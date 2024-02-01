@@ -14,3 +14,28 @@ If running this site under apache, the wsgi module is required.
 
 It should become enabled automatically after installation. If not
     a2enmod wsgi
+
+## service
+
+Set this up as a systemd service with the following config.
+
+```
+# cat /etc/systemd/system/intagnewspaper.service
+Unit]
+Description=uWSGI instance to serve intagnewspaper.org 
+After=network.target
+
+[Service]
+User=<username>
+Group=<username>
+WorkingDirectory=/home/<username>/xmunoz/intagnewspaper
+ExecStart=/home/<username>/xmunoz/intagnewspaper/bin/runserver
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Then start it.
+```
+service intagnewspaper start
+```
